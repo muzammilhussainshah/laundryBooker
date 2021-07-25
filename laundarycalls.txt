@@ -1,0 +1,208 @@
+Main Url ->http://laundary.debughands.com/api/
+Request Type :Post
+end-point -> check-postal-code
+{
+	"postal_code":"BM1",
+}
+
+->return shop_id
+
+
+Request Type :Post
+end-point -> customer-request
+{
+	"house_number":"test@test1222.com",
+	"street":"test",
+	"postal_code":"923417164556",
+	"town":"923417164556",
+}
+
+
+
+Request Type :Post
+end-point -> login
+{
+	"email":"test@test1222.com",
+	"password":"test"
+}
+return token
+
+
+Request Type :Post
+end-point -> create-customer
+{
+	"email":"test@test1222.com",
+	"password":"test",
+	"mobile_number":"923417164556"
+}
+
+return token
+
+
+
+
+Request Type :Get
+end-point -> get-categories
+Call Example: http://laundary.debughands.com/api/get-categories 
+
+Request Type :Get
+end-point -> get-service
+Call Example: http://laundary.debughands.com/api/get-service/1
+
+
+
+Request Type Post
+
+end-point get-pick-up
+
+{
+	"shop_id":1,
+	"date":"2019-08-08 01:00:00"
+}
+
+Response
+
+{
+    "results": [
+        {
+            "id": "29",
+            "pick_up_time_from": "2019-08-08 10:00:00",
+            "pick_up_time_to": "2019-08-08 11:00:00",
+            "pick_up_range": "10:00 AM-11:00 AM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:06:41",
+            "updated_at": "2019-08-07 23:06:41"
+        },
+        {
+            "id": "30",
+            "pick_up_time_from": "2019-08-08 11:00:00",
+            "pick_up_time_to": "2019-08-08 12:00:00",
+            "pick_up_range": "11:00 AM-12:00 PM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:06:41",
+            "updated_at": "2019-08-07 23:06:41"
+        },
+        {
+            "id": "31",
+            "pick_up_time_from": "2019-08-08 13:00:00",
+            "pick_up_time_to": "2019-08-08 14:00:00",
+            "pick_up_range": "1:00 PM-2:00 PM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:06:41",
+            "updated_at": "2019-08-07 23:06:41"
+        },
+        {
+            "id": "32",
+            "pick_up_time_from": "2019-08-08 15:00:00",
+            "pick_up_time_to": "2019-08-08 16:00:00",
+            "pick_up_range": "3:00 PM-4:00 PM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:06:41",
+            "updated_at": "2019-08-07 23:06:41"
+        }
+    ]
+}
+
+
+Request Type Post
+
+end-point get-drop-off
+
+{
+	
+	"shop_id":1,
+	"pick_up_date_time":"2019-08-08 01:00:00",
+	"drop_off_date":"2019-08-08"
+}
+
+
+
+Response 
+Result 
+
+
+{
+    "results": [
+        {
+            "id": "29",
+            "drop_off_time_from": "2019-08-08 20:00:00",
+            "drop_off_time_to": "2019-08-08 21:00:00",
+            "drop_off_range": "8:00 PM-9:00 PM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:07:48",
+            "updated_at": "2019-08-07 23:07:48"
+        },
+        {
+            "id": "30",
+            "drop_off_time_from": "2019-08-08 21:00:00",
+            "drop_off_time_to": "2019-08-08 22:00:00",
+            "drop_off_range": "9:00 PM-10:00 PM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:07:48",
+            "updated_at": "2019-08-07 23:07:48"
+        },
+        {
+            "id": "31",
+            "drop_off_time_from": "2019-08-08 22:00:00",
+            "drop_off_time_to": "2019-08-08 23:00:00",
+            "drop_off_range": "10:00 PM-11:00 PM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:07:48",
+            "updated_at": "2019-08-07 23:07:48"
+        },
+        {
+            "id": "32",
+            "drop_off_time_from": "2019-08-08 23:00:00",
+            "drop_off_time_to": "2019-08-08 00:00:00",
+            "drop_off_range": "11:00 PM-12:00 AM",
+            "shop_id": "1",
+            "deleted_at": null,
+            "created_at": "2019-08-07 23:07:48",
+            "updated_at": "2019-08-07 23:07:48"
+        }
+    ]
+}
+
+
+
+Request Type Post
+Request Type Post
+
+end-point place-order
+Request Type Post
+
+
+{
+	"shop_id":1,
+	"customer_id":"1",
+	"pick_up_time":"3:00 PM-4:00 PM",
+	"drop_off_time":"3:00 PM-4:00 PM",
+	"house_number":"12",
+	"street":"test",
+	"postal_code":"123",
+	"town":"tEst",
+	"start_pickup_time":"2019-08-08 15:00:00",
+	"end_pickup_time":"2019-08-08 15:00:00",
+	"start_drop_off_time":"2019-08-08 15:00:00",
+	"end_drop_off_time":"2019-08-08 15:00:00",
+	"total":100,
+	"order_details" :[
+	{
+		"cat_id":"1",
+		"service_id":"1",
+		"service_price":1,
+		"service_quantity":1
+	}
+	
+	]
+	
+}
+
+
